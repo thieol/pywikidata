@@ -14,3 +14,9 @@ class UnknownError(Exception):
 
 class ItemNotFoundError(Exception):
     pass
+
+class BadTokenError(Exception):
+    pass
+
+class SaveFailedError(Exception):
+    pass     

@@ -47,9 +47,9 @@ class API:
         if type(items) != list:
             items = [items]
         for item in items:
-            params = {"action":"wbsetitem"}
+            params = {"action":"wbeditentity"}
             if item.id:
-                params["id"] = item.id
+                params["id"] = "q" + str(item.id)
             if comment:
                 params["summary"] = comment
             if self.config["botflag"]:
@@ -104,5 +104,5 @@ class API:
             return target
         else:
             i = Item(sitelinks, aliases, labels, descriptions)
-            i.id = int(item["id"].replace("q",""))
+            i.id = int(item["id"].lower().replace("q",""))
             return i

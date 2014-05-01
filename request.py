@@ -71,14 +71,18 @@ class RequestHandler:
         return self.post({"action": "tokens", "format": "json", "type": "edit"})["tokens"]["edittoken"]
 
     def _checkErrors(self, data):
+        print data
         if not "error" in data:
             return
         code = data["error"]["code"]
+        print "code" + code
         error = None
         if code == "cant-edit":
             error = errors.PermissionError
         elif code == "no-such-item-id":
             error = errors.ItemNotFoundError
+        elif code == "badtoken":
+            error = errors.BadTokenError
         else:
             error = errors.UnknownError
         raise error(data["error"]["info"])
