@@ -20,3 +20,6 @@ class BadTokenError(Exception):
 
 class SaveFailedError(Exception):
     pass     
+
+class NoSuchEntityIdError(Exception): 
+    pass

@@ -81,6 +81,8 @@ class RequestHandler:
             error = errors.ItemNotFoundError
         elif code == "badtoken":
             error = errors.BadTokenError
+        elif code == "no-such-entity-id":
+            error = errors.NoSuchEntityIdError
         else:
             error = errors.UnknownError
-        raise error(data["error"]["info"])
+        raise error("(" + code + ") " + data["error"]["info"])
