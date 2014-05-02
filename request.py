@@ -82,7 +82,9 @@ class RequestHandler:
         elif code == "badtoken":
             error = errors.BadTokenError
         elif code == "no-such-entity-id":
-            error = errors.NoSuchEntityIdError
+            error = errors.NoSuchEntityIdError 
+        elif code == "failed-save":
+            error = errors.FailSavedError
         else:
             error = errors.UnknownError
         raise error("(" + code + ") " + data["error"]["info"])

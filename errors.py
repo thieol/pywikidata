@@ -23,3 +23,6 @@ class SaveFailedError(Exception):
 
 class NoSuchEntityIdError(Exception): 
     pass
+
+class FailSavedError(Exception):
+    pass
