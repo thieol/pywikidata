@@ -16,5 +16,10 @@ put config.properties in the main path of your program
 pywikidata will then search for a file named config.properties
 now see examples.py to see how you can use wikidata
 
+= bot =
+once you have understood examples and have a bot account
+you can see bot.py that shows how to get an item
+update labels or descriptions
+
 
  

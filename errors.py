@@ -26,3 +26,6 @@ class NoSuchEntityIdError(Exception):
 
 class FailSavedError(Exception):
     pass
+
+class InvalidBotOperation(Exception):
+    pass
